@@ -1,17 +1,23 @@
 import styles from "./UserCard.module.css";
 
-const UserCard = () => {
+interface Props {
+    username: string;
+    avatar: string;
+    url: string;
+    }
+
+const UserCard = ({ username, avatar, url }: Props) =>{
 
   return (
     <div className={styles.card}>
       <img
-        src=""
-        alt="User avatar"
+        src={avatar}
+        alt={`${username} avatar`}
         className={styles.avatar}
       />
 
       <div className={styles.info}>
-        <h2 className={styles.username}>Karabo</h2>
+        <h2 className={styles.username}>{username}</h2>
 
         <div className={styles.actions}>
           <button className={styles.profileBtn}>Profile</button>
