@@ -1,5 +1,6 @@
 import { useUserContext } from "../../context/UsersContext";
 import UserCard from "../../components/userCard/UserCard";
+import Search from "../../components/searchBar/SearchBar";
 import styles from'./Homepage.module.css'
 
 const Homepage = () => {
@@ -8,6 +9,7 @@ const Homepage = () => {
 
   return (
     <div>
+      <Search/>
       <h1>Users</h1>
       <div className={styles.container}>
         {users.map((user) => (
