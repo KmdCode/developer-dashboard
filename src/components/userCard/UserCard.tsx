@@ -1,4 +1,6 @@
 import styles from "./UserCard.module.css";
+import { Link } from "react-router-dom";
+
 
 interface Props {
     username: string;
@@ -20,7 +22,10 @@ const UserCard = ({ username, avatar, url }: Props) =>{
         <h2 className={styles.username}>{username}</h2>
 
         <div className={styles.actions}>
-          <button className={styles.profileBtn}>Profile</button>
+            <Link to={`/user/${username}`}>
+             <button className={styles.profileBtn}>Profile</button>
+            </Link>
+          
           <button className={styles.profileBtn}>Favorite</button>
         </div>
       </div>

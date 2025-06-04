@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import type { ReactNode } from "react";
 import { fetchUsers } from "../utils/githubService";
 
 interface User {
@@ -15,7 +16,7 @@ interface UsersContextType {
 
 const UsersContext = createContext<UsersContextType | null>(null);
 
-export const GithubProvider = ({ children }: { children: React.ReactNode }) => {
+export const UsersProvider = ({ children }: { children:ReactNode }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [since, setSince] = useState<number>(0);
 

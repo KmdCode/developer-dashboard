@@ -21,12 +21,8 @@ export const fetchUsers = async (since:number = 0) => {
 }
 
 export const fetchUser = async (username: string) => {
-    const response = await axiosInstance.get(`/:${username}`, {
-        params: {
-            username
-        }
-    })
-    return response;
+    const response = await axiosInstance.get(`/users/${username}`)
+    return response.data;
 }
 
 export const fetchUserRepositories = async (username: string) => {
