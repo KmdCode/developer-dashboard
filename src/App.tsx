@@ -1,13 +1,13 @@
 import React from "react"
-import Homepage from "./pages/Homepage"
+import { GithubProvider } from "./context/UsersContext"
+import Homepage from "./pages/homepage/Homepage"
 
 export const App = () => {
 
   return (
-    <>
-      <h1>Developer Dashboard</h1>
-      <Homepage/>
-    </>
+<GithubProvider>
+    <Homepage />
+  </GithubProvider>
   )
 }
 

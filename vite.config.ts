@@ -6,6 +6,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   define: {
-    'process.env.TOKEN':JSON.stringify(process.env.TOKEN)
+    'process.env.TOKEN':JSON.stringify(process.env.VITE_TOKEN)
   }
 })
