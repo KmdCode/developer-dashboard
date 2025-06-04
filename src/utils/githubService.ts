@@ -15,7 +15,6 @@ const fetchData = () => {
             params:{
                 since:0,
                 per_page: 20
-
             }
         })
         return response.data
