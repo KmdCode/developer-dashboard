@@ -1,4 +1,3 @@
-// components/Search.tsx
 import { useState, useEffect } from "react";
 import { searchUsers } from "../../utils/githubService"; 
 import { useDebounce } from "../../hooks/useDebounce"; 
