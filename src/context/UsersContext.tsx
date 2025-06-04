@@ -16,20 +16,45 @@ interface UsersContextType {
 
 const UsersContext = createContext<UsersContextType | null>(null);
 
-export const UsersProvider = ({ children }: { children:ReactNode }) => {
+export const UsersProvider = ({ children }: { children: ReactNode }) => {
   const [users, setUsers] = useState<User[]>([]);
   const [since, setSince] = useState<number>(0);
 
   const getUsers = async (start: number) => {
     const data = await fetchUsers(start);
     setUsers(data);
+
+    // Save to localStorage
+    localStorage.setItem("github_users", JSON.stringify(data));
+    localStorage.setItem("github_since", String(start));
   };
 
   useEffect(() => {
-    getUsers(since);
+    // Load from localStorage
+    const storedUsers = localStorage.getItem("github_users");
+    const storedSince = localStorage.getItem("github_since");
+
+    if (storedUsers) {
+      setUsers(JSON.parse(storedUsers));
+    }
+
+    if (storedSince) {
+      setSince(Number(storedSince));
+    } else {
+      getUsers(0); // initial fetch if nothing stored
+    }
+  }, []);
+
+  useEffect(() => {
+    if (since !== 0) {
+      getUsers(since);
+    }
   }, [since]);
 
-  const nextPage = () => setSince(users[users.length - 1]?.id || since + 20);
+  const nextPage = () => {
+    const nextSince = users[users.length - 1]?.id || since + 20;
+    setSince(nextSince);
+  };
 
   return (
     <UsersContext.Provider value={{ users, nextPage }}>

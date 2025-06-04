@@ -1,5 +1,6 @@
 import styles from "./UserCard.module.css";
 import { Link } from "react-router-dom";
+import { useFavorites } from "../../context/FavoriteContext";
 
 
 interface Props {
@@ -9,6 +10,15 @@ interface Props {
     }
 
 const UserCard = ({ username, avatar, url }: Props) =>{
+
+  const { toggleFavorite, isFavorited } = useFavorites();
+
+  const handleFavorite = () => {
+    toggleFavorite({
+      login: username,
+      avatar_url: avatar,
+    });
+  };
 
   return (
     <div className={styles.card}>
@@ -26,7 +36,9 @@ const UserCard = ({ username, avatar, url }: Props) =>{
              <button className={styles.profileBtn}>Profile</button>
             </Link>
           
-          <button className={styles.profileBtn}>Favorite</button>
+          <button className={styles.profileBtn} onClick={handleFavorite}>
+            {isFavorited(username) ? "Unfavorite" : "Favorite"}
+          </button>
         </div>
       </div>
     </div>
