@@ -25,3 +25,12 @@
     padding: 1rem;
 
 }
+
+
+@media (max-width: 768px) {
+     .navbar{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+}

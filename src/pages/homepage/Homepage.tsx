@@ -23,10 +23,10 @@ const Homepage = () => {
           />
         ))}
       </div>
-       <button onClick={prevPage} style={{ marginTop: "2rem" }}>
+       <button onClick={prevPage} className={styles.btn}>
         Next Page
       </button>
-      <button onClick={nextPage} style={{ marginTop: "2rem" }}>
+      <button onClick={nextPage} className={styles.btn}>
         Next Page
       </button>
      
