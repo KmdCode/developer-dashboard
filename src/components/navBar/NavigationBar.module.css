@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.logo {
+    color:#ffffff;
+    font-size: 2.5rem;
+}
+
+.btn {
+    display: flex;
+
+}
+.item {
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 1rem;
+    margin-right: 1rem;
+    background: #000000;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+}

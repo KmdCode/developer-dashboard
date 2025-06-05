@@ -1,4 +1,5 @@
 import { useFavorites } from "../../context/FavoriteContext";
+import NavigationBar from "../../components/navBar/NavigationBar";
 import { Link } from "react-router-dom";
 
 const FavoritesPage = () => {
@@ -6,6 +7,7 @@ const FavoritesPage = () => {
 
   return (
     <div>
+      <NavigationBar/>
       <h1>Favorite Users</h1>
       {favorites.length === 0 ? (
         <p>No favorites yet.</p>

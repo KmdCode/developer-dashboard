@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 16rem;
+  max-width: 12rem;
   min-height: 10rem;
-  background-color: #fff;
-  padding: 2rem;
+  background-color: #6667ab;
+  padding: 2.2rem;
   border-radius: 1rem;
-  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.258);
   gap: 1rem;
   text-align: center;
+  margin-left: 1rem;
 }
 
 .avatar {
@@ -22,7 +23,7 @@
 .username {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
   margin-top: 0.5rem;
   text-align: center;
 }
@@ -41,7 +42,6 @@
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .profileBtn {
@@ -50,19 +50,20 @@
 }
 
 .profileBtn:hover {
-  background-color: #005fcc;
+  background-color: #210635;
 }
 
 .favoriteBtn {
-  background-color: #f1f1f1;
+  background-color: #210635;
   color: #333;
 }
 
 .favoriteBtn:hover {
-  background-color: #e0e0e0;
+  background-color: #6667ab;
 }
 
 .activeFavorite {
   background-color: #ffe5e5;
   color: #cc0000;
 }
+
