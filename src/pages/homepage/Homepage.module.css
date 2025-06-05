@@ -13,3 +13,12 @@ h1 {
     margin-left: 1rem;
     color: #ffff;
 }
+
+.btn {
+    color: #ffffff;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #000000;
+    border-radius: 1rem;
+    
+}

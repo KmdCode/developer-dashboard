@@ -1,6 +1,6 @@
 import { useState, useEffect, type ChangeEvent } from "react";
 import { searchUsers } from "../../utils/githubService"; 
-import { useDebounce } from "../../hooks/useDebounce"; 
+import { useDebounce } from "@uidotdev/usehooks";
 import UserCard from "../userCard/UserCard";
 
 interface GitHubUser {
