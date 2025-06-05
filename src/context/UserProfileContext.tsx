@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import   { createContext, useContext, useState } from "react";
 import type {ReactNode} from 'react';
 import { fetchUser } from "../utils/githubService";
 
@@ -42,7 +42,7 @@ export const UserProfileProvider = ({ children }: { children: ReactNode }) => {
 export const useUserProfile = () => {
   const context = useContext(UserProfileContext);
   if (!context) {
-    throw new Error("useUserProfile must be used within a UserProfileProvider");
+    throw new Error("useUserProfile must be used in Provider");
   }
   return context;
 };

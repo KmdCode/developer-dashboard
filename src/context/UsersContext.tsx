@@ -24,13 +24,11 @@ export const UsersProvider = ({ children }: { children: ReactNode }) => {
     const data = await fetchUsers(start);
     setUsers(data);
 
-    // Save to localStorage
     localStorage.setItem("github_users", JSON.stringify(data));
     localStorage.setItem("github_since", String(start));
   };
 
   useEffect(() => {
-    // Load from localStorage
     const storedUsers = localStorage.getItem("github_users");
     const storedSince = localStorage.getItem("github_since");
 
@@ -41,7 +39,7 @@ export const UsersProvider = ({ children }: { children: ReactNode }) => {
     if (storedSince) {
       setSince(Number(storedSince));
     } else {
-      getUsers(0); // initial fetch if nothing stored
+      getUsers(0);
     }
   }, []);
 
