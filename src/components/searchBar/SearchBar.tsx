@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ChangeEvent } from "react";
 import { searchUsers } from "../../utils/githubService"; 
 import { useDebounce } from "../../hooks/useDebounce"; 
 import UserCard from "../userCard/UserCard";
@@ -32,22 +32,24 @@ const Search = () => {
 
     fetchData();
   }, [debouncedQuery]);
+  
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+  }
 
   return (
     <div style={{ padding: "1rem" }}>
       <input
-        type="text"
-        placeholder="Search GitHub users..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        type="text" placeholder="Search Users" value={query} onChange={handleChange}
         style={{
-          width: "100%",
+          width: "50%",
           padding: "0.5rem",
           fontSize: "1rem",
           marginBottom: "1rem",
+          alignItems:"center"
         }}
       />
-
+      
       <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
         {results.map((user) => (
           <UserCard

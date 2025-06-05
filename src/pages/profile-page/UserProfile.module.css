@@ -4,7 +4,7 @@
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-color: #6667ab;
   text-align: center;
   font-family: sans-serif;
 }
@@ -24,13 +24,12 @@
 }
 
 .username {
-  color: #666;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
 .bio {
-  font-style: italic;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
@@ -42,5 +41,5 @@
 
 .infoItem {
   margin: 0.5rem 0;
-  color: #444;
+  color: #ffffff;
 }
