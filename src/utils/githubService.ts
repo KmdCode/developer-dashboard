@@ -31,7 +31,6 @@ export const fetchUserRepositories = async (username: string) => {
 
         }
     })
-
     return response;
 }
 

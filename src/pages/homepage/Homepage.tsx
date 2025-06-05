@@ -6,7 +6,7 @@ import styles from'./Homepage.module.css'
 
 const Homepage = () => {
 
-  const { users, nextPage } = useUserContext();
+  const { users, nextPage, prevPage } = useUserContext();
 
   return (
     <div>
@@ -23,9 +23,13 @@ const Homepage = () => {
           />
         ))}
       </div>
+       <button onClick={prevPage} style={{ marginTop: "2rem" }}>
+        Next Page
+      </button>
       <button onClick={nextPage} style={{ marginTop: "2rem" }}>
         Next Page
       </button>
+     
     </div>
   );
 };
