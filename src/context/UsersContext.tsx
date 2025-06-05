@@ -12,6 +12,7 @@ interface User {
 interface UsersContextType {
   users: User[];
   nextPage: () => void;
+  prevPage: () => void;
 }
 
 const UsersContext = createContext<UsersContextType | null>(null);
@@ -50,12 +51,18 @@ export const UsersProvider = ({ children }: { children: ReactNode }) => {
   }, [since]);
 
   const nextPage = () => {
-    const nextSince = users[users.length - 1]?.id || since + 20;
-    setSince(nextSince);
+    if (users.length > 0){
+      setSince(since+20)
+    }
   };
 
+  const prevPage = () => {
+
+    setSince(since - 20)
+  }
+
   return (
-    <UsersContext.Provider value={{ users, nextPage }}>
+    <UsersContext.Provider value={{ users, nextPage , prevPage}}>
       {children}
     </UsersContext.Provider>
   );
