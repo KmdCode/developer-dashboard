@@ -9,7 +9,7 @@ interface Props {
     url: string;
     }
 
-const UserCard = ({ username, avatar, url }: Props) =>{
+const UserCard = ({ username, avatar}: Props) =>{
 
   const { toggleFavorite, isFavorited } = useFavorites();
 
